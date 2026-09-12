@@ -1,0 +1,7 @@
+# Python bytecode and cache folders
+__pycache__/
+*.py[cod]
+
+# Generated keyboard logger output
+keystrokes.log
+key.txt

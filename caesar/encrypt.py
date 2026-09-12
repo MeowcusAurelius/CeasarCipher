@@ -1,19 +1,23 @@
-#This is a simple implementation of the Caesar cipher in Python.
+"""Ask for a message and encrypt it with a Caesar cipher."""
+
+# A Caesar cipher moves every letter by the same number of places.
 #It takes a message and a shift amount as input, and outputs the encrypted message.
 #This definition encrypts the input text by shifting each letter by the specified amount, 
 #wrapping around the alphabet if necessary. Non-alphabetic characters are left unchanged.
 def encrypt(text, shift):
+    """Return ``text`` with each letter moved forward by ``shift`` places."""
     result = ""
     for char in text.upper():
         if char.isalpha():
-            # 'A' is 65. Bring to 0-25, shift, wrap around 26 letters
-            # Then convert back to ASCII by adding 65. 
+            # ord() gives A the number 65. Subtracting 65 changes A-Z to 0-25.
+            # % 26 wraps Z back around to A when the shift goes past Z.
             result += chr((ord(char) - 65 + shift) % 26 + 65)
         else:
-            result += char  # leave spaces/punctuation untouched
+            # Spaces, numbers, and punctuation do not need to be encrypted.
+            result += char
     return result
 
-# Message and shift amount input
+# Get the two pieces of information needed by the program.
 message = input("Message to encrypt: ")
 key = int(input("Shift amount (1-25): "))
 print("Encrypted:", encrypt(message, key))
